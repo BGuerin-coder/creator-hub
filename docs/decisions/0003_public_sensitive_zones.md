@@ -2,6 +2,7 @@
 
 ## Status
 
+Updated  - 2026/10/06
 Proposed - 2026/10/04
 
 ## Context
@@ -14,36 +15,56 @@ Proposed - 2026/10/04
 
 ## Decision
 
-Cloudfare should be used to block any DDos attacker since it's a matter of integration. 
+Two zones will be set up: a public zone (content, blog, contact, presentation, videos, etc.) and a sensitive zone (payment, subscription management, transactions).
 
-In order to match the isolation, we will have two separated instance of postgresql, one to manage the data for the payment module and the other for the rest. We should communicate with 
+The payment webhook is the only flow from the public zone to the sensitive zone, and the only aggregated, anonymised data flows back out of it.
+
+The sensitive zone is only reachable through a reverse proxy and is not directly exposed.
+
+As stated in [ADR 0001](./0001_modular_monolith_vs_micro_frontend.md), we keep a single CI/CD, but the payment module is excluded from it to be clearly isolated. This is intended.
+
+Cloudflare blocks DDoS attacks and protects the public zone, since it is a matter of integration.
+
+The payment provider is defined in [ADR 0004](./0004_payment.md), and the databases in [ADR 0005](./0005_bdd.md).
 
 ## Consequences
 
 ### Benefits
 
-- Cloudfare is easily configurable.
-- With Cloudfare we didn't reinvent the wheel.
-- Cloudfare is regularly updated and maintained with the last attack.
+- If a public page is compromised, the attacker cannot access the sensitive information.
+- Cloudflare is easily configurable, and we don't reinvent the wheel.
+- Cloudflare is regularly updated against the latest attacks.
 
 ### Cons
 
-- Cloudfare as dependency and should updated regularly
+- The payment module must always be up and healthy.
+- Cloudflare is a dependency and must be updated regularly.
+- A specific CI/CD for the sensitive zone (Docker x2, deployment x2, variables x2).
 
 ## Alternatives considered
 
-- Building our own "Cloudfare" protection but it will be too costy to implement for one person.  
+- Building our own Cloudflare-like protection would be too costly to implement for one person.
+
+## Open questions
+
+- How does the public zone authenticate when it asks the sensitive zone to create a payment (service token, internal network only, mTLS)?
+- What is the exact list of endpoints allowed between the two zones, beyond the webhook?
+- Where does the admin area live (a subdomain of the public zone, or its own zone), and what can it read from the sensitive zone?
+- How should the public zone behave if the sensitive zone is unavailable (degrade gracefully, cache the last known donation progress)?
+- Do we need to store transactions ourselves at all, or could the payment provider's own records be enough? This affects whether the sensitive zone needs its own database.
+- What is the actual threat model for the boundary between the two zones (for example, a STRIDE pass on the "create payment" flow, and the SSRF risk from the public zone)?
 
 ## Revisit triggers
 
-- If Cloudfare is compromised or not maintain anymore, building our own solution, could be considered.
-- If the team increase and we can have someone on this subject.
-- If the cost is not a problem anymore, it could be considered to take the pro version in order to benefit to the "Lossless Image Optimization", and "Accelerated Mobile Pages (AMP)".
-
+- If Cloudflare is compromised or no longer maintained, building our own solution could be considered.
+- If the team grows, someone could be dedicated to this subject.
+- If the cost is no longer a problem, the Pro plan could be considered for "Lossless Image Optimization" and "Accelerated Mobile Pages (AMP)".
+- If the team grows enough, an expert could be hired to handle the security part exclusively.
 
 ## Sources
 
 > (New) I think that section could help to understand the decision
 
-- Cloudfare documentation, [Protect your origin server](https://developers.cloudflare.com/fundamentals/security/protect-your-origin-server/)
-- [Cloudfare plans](https://www.cloudflare.com/plans/#application-services)
+- Cloudflare documentation, [Protect your origin server](https://developers.cloudflare.com/fundamentals/security/protect-your-origin-server/)
+- [Cloudflare plans](https://www.cloudflare.com/plans/#application-services)
+- [Open Security Architecture - Patterns](https://opensecurityarchitecture.org/patterns/sp-017/)
