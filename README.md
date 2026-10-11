@@ -49,8 +49,7 @@ All important decisions architecture should be explained in an ADR (Architecture
 
 ## Stack
 
-- Frontend
-- Backend
+- [Nuxt](https://nuxt.com/docs/4.x/getting-started/installation)
 
 ## Dependencies
 
