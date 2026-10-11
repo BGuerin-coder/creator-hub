@@ -19,6 +19,8 @@ Superseded
 
 ## Alternatives considered
 
+## Open questions
+
 ## Revisit triggers
 
 ## Sources
