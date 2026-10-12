@@ -1,0 +1,44 @@
+name: Feature or enhancement
+description: A new capability, or an improvement to an existing one
+title: "[Observable outcome, e.g. 'Show the donation goal progress bar on the homepage']"
+labels:
+  - "type • feature"
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What and why
+      description: What should happen, and why it matters.
+    validations:
+      required: true
+  - type: textarea
+    id: done-when
+    attributes:
+      label: Done when...
+      description: One sentence. If it needs "and", this should probably be two issues.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      multiple: true
+      options:
+        - frontend
+        - admin
+        - shop
+        - participation
+        - payment
+        - social-media
+        - publication
+        - planning
+        - infra
+        - architecture
+    validations:
+      required: true
+  - type: checkboxes
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - label: This is an improvement to an existing feature, not a brand new one (swap the `type • feature` label for `type • enhancement`)
