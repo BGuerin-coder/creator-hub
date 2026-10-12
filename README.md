@@ -49,9 +49,12 @@ All important decisions architecture should be explained in an ADR (Architecture
 
 ## Stack
 
-- [Nuxt](https://nuxt.com/docs/4.x/getting-started/installation)
-
-## Dependencies
+- Architecture: modular monolith — [ADR 0001](./docs/decisions/0001_modular_monolith_vs_micro_frontend.md)
+- Frontend: [Nuxt](https://nuxt.com/docs/4.x/getting-started/installation) — [ADR 0002](./docs/decisions/0002_framework_frontend.md)
+- Containers: Docker
+- CDN / exposure: Cloudflare (free plan); the zone split and reverse proxy are still open — [ADR 0003](./docs/decisions/0003_public_sensitive_zones.md)
+- Database: not decided yet — [ADR 0005](./docs/decisions/0005_bdd.md)
+- Payment provider: not decided yet — [ADR 0004](./docs/decisions/0004_payment.md)
 
 ## Principles
 
