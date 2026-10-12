@@ -53,23 +53,24 @@ All important decisions architecture should be explained in an ADR (Architecture
 
 ## Dependencies
 
-## Milestones
-
-#### MVP
-- Presents the creator
-  - Brief
-- Admin
-  - Analytics
-  - Permission levels
-
-#### v1
-- Presents the creator (home page)
-  - Photos
-- Social Media
-  - Youtube videos
-  - Twitch reviews / clips
-  - Instagram reels / posts
-
-## Guidelines
-
 ## Principles
+
+### Secure by Design
+
+A module should be limited to its scope, so that a compromised module cannot compromise the rest of the application.
+
+### Simple before flexible
+
+Flexibility comes at the cost of complexity. Any added flexibility must be clearly justified against a simpler solution.
+
+### Design mobile-first
+
+A small screen forces clarity about what's essential, and the result scales up more easily than a desktop design scales down.
+
+### Accessibility
+
+Every feature should be usable by people with disabilities. Accessibility benefits everyone, not just them.
+
+### Resilient
+
+If a module fails, it should not take down the rest of the application. The same applies to the UI: an error should degrade gracefully instead of breaking the whole page.
