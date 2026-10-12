@@ -1,0 +1,48 @@
+name: Bug report
+description: Something is broken that should already work
+title: "[Short description of what's broken]"
+labels:
+  - "type • bug"
+body:
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      multiple: true
+      options:
+        - frontend
+        - admin
+        - shop
+        - participation
+        - payment
+        - social-media
+        - publication
+        - planning
+        - infra
+        - architecture
+    validations:
+      required: true
+  - type: checkboxes
+    id: urgency
+    attributes:
+      label: Urgency
+      options:
+        - label: This should jump the queue (apply `priority • urgent`: security issue or production bug)
