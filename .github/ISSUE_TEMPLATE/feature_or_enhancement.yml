@@ -1,6 +1,5 @@
 name: Feature or enhancement
 description: A new capability, or an improvement to an existing one
-title: "[Observable outcome, e.g. 'Show the donation goal progress bar on the homepage']"
 labels:
   - "type • feature"
 body:
@@ -8,7 +7,7 @@ body:
     id: description
     attributes:
       label: What and why
-      description: What should happen, and why it matters.
+      description: What should happen, and why it matters. Title the issue by its observable outcome, e.g. "Show the donation goal progress bar on the homepage".
     validations:
       required: true
   - type: textarea
