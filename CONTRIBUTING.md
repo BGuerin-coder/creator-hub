@@ -5,6 +5,7 @@
 ### Process / Git
 
 - An issue is closed by a PR (`Closes #N`), no commit on main directly.
+- A PR is merged with a squash: its title and description become the commit message on main, so write them as a clear summary.
 - Cross-module imports must go through the module's `api.ts`. A lint rule will enforce this, see [#12](https://github.com/BGuerin-coder/creator-hub/issues/12).
 
 ### ADR workflow
