@@ -43,18 +43,24 @@ Centralize all the content related to a creator using different social media for
 
 ## Architecture
 
-All important decisions architecture should be explained in an ADR (Architecture Decision Record) in the folder [docs/decisions](./docs/decisions/).
+All important architecture decisions should be explained in an ADR (Architecture Decision Record) in the folder [docs/decisions](./docs/decisions/).
 
-- [Modular Monolith](./docs/decisions/0001_modular_monolith_vs_micro_frontend.md)
+| ADR                                                                 | Title                              | Status   |
+| ------------------------------------------------------------------- | ---------------------------------- | -------- |
+| [0001](./docs/decisions/0001_modular_monolith_vs_micro_frontend.md) | Modular monolith vs micro frontend | Accepted |
+| [0002](./docs/decisions/0002_framework_frontend.md)                 | Frontend framework (Nuxt)          | Accepted |
+| [0003](./docs/decisions/0003_public_sensitive_zones.md)             | Public and sensitive zones         | Proposed |
+| [0004](./docs/decisions/0004_payment.md)                            | Payment provider                   | Proposed |
+| [0005](./docs/decisions/0005_bdd.md)                                | Databases                          | Proposed |
 
 ## Stack
 
 - Architecture: modular monolith — [ADR 0001](./docs/decisions/0001_modular_monolith_vs_micro_frontend.md)
 - Frontend: [Nuxt](https://nuxt.com/docs/4.x/getting-started/installation) — [ADR 0002](./docs/decisions/0002_framework_frontend.md)
 - Containers: Docker
-- CDN / exposure: Cloudflare (free plan); the zone split and reverse proxy are still open — [ADR 0003](./docs/decisions/0003_public_sensitive_zones.md)
-- Database: not decided yet — [ADR 0005](./docs/decisions/0005_bdd.md)
-- Payment provider: not decided yet — [ADR 0004](./docs/decisions/0004_payment.md)
+- CDN / exposure: Cloudflare (free plan); the zone split and reverse proxy are only proposed — [ADR 0003](./docs/decisions/0003_public_sensitive_zones.md) (Proposed)
+- Database: not decided yet — [ADR 0005](./docs/decisions/0005_bdd.md) (Proposed)
+- Payment provider: not decided yet — [ADR 0004](./docs/decisions/0004_payment.md) (Proposed)
 
 ## Principles
 
