@@ -2,7 +2,6 @@
 
 ## Status
 
-Updated  - 2026/10/06
 Proposed - 2026/10/04
 
 ## Context
