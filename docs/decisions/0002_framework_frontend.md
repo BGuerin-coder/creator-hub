@@ -28,7 +28,7 @@ Using Nuxt is aligned with the goal of the application and the Modular Monolith.
 ### Cons
 
 - Less popular than Next.js
-- No rules to respect the only entry point `api.ts` (from a module)
+- Nuxt has no built-in rule to enforce the only entry point `api.ts` (from a module): a custom lint rule has to be created (see [#12](https://github.com/BGuerin-coder/creator-hub/issues/12))
 
 ## Alternatives considered
 
