@@ -9,7 +9,7 @@
 
 ### ADR workflow
 
-- An ADR file is named `000X_short_name.md`, numbered sequentially, lowercase with underscores. Start from [`_0000_template.md`](./docs/decisions/_0000_template.md).
+- An ADR file is named `NNNN_short_name.md`, numbered sequentially (`0000` is the project context, not a decision), lowercase with underscores. Start from [`_0000_template.md`](./docs/decisions/_0000_template.md).
 - Status starts at `Proposed` (with a date). It becomes `Accepted` (with a date) once the decision is actually made, and later `Deprecated` or `Superseded` (with a date, and the replacing ADR) if replaced. Do not add `Updated` entries: the git history already tracks edits.
 - Unresolved points go in the ADR's "Open questions" section instead of being guessed at; they don't block `Proposed`.
 
@@ -48,7 +48,7 @@
 
 - Each API and dependency call must handle its error explicitly (`try/catch`, or the `error` returned by `useFetch`), with a clear fallback or error state. It should never fail silently.
 
-### Dependency
+### Dependencies
 
 - Before adding a dependency, check if it is really needed over the existing stack or a native feature.
 
@@ -56,9 +56,9 @@
 
 - Automated tests are mandatory for the payment and auth flows; optional elsewhere for now.
 
-### Performances / images
+### Performance / images
 
-- Images are served in a modern format `(WebP/AVIF)` and lazy-loaded below the fold.
+- Images are served in a modern format (`WebP`/`AVIF`) and lazy-loaded below the fold.
 
 ### Labels
 
