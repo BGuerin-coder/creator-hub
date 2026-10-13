@@ -2,10 +2,11 @@
 
 ## Status
 
-Proposed
-Accepted
-Deprecated
-Superseded
+Proposed - YYYY/MM/DD
+
+<!-- Then: Accepted - YYYY/MM/DD  -->
+<!-- Deprecated - YYYY/MM/DD by ADR NNNN - YYYY/MM/DD -->
+<!-- Superseded by ADR NNNN - YYYY/MM/DD -->
 
 ## Context
 
