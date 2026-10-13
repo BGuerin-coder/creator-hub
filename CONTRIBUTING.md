@@ -4,13 +4,13 @@
 
 ### Process / Git
 
-- An issue is merged with a PR, no commit on main directly.
-- Cross-module imports must go through the module's `api.ts`, a lint rule enforces this.
+- An issue is closed by a PR (`Closes #N`), no commit on main directly.
+- Cross-module imports must go through the module's `api.ts`. A lint rule will enforce this, see [#12](https://github.com/BGuerin-coder/creator-hub/issues/12).
 
 ### ADR workflow
 
 - An ADR file is named `000X_short_name.md`, numbered sequentially, lowercase with underscores. Start from [`_0000_template.md`](./docs/decisions/_0000_template.md).
-- Status starts at `Proposed` (with a date). It becomes `Accepted` (with a date) once the decision is actually made, and later `Deprecated` or `Superseded` if replaced by another ADR.
+- Status starts at `Proposed` (with a date). It becomes `Accepted` (with a date) once the decision is actually made, and later `Deprecated` or `Superseded` (with a date, and the replacing ADR) if replaced. Do not add `Updated` entries: the git history already tracks edits.
 - Unresolved points go in the ADR's "Open questions" section instead of being guessed at; they don't block `Proposed`.
 
 ### Issues & Milestones
@@ -25,33 +25,32 @@
 ### Security
 
 - When a permission should be defined, use the lowest one that permits the action.
-- Do not commit any secret or any sensitive information
+- Do not commit any secret or any sensitive information.
 
 ### Simple before flexible
 
-- Complexity should be justified in an ADR
+- Complexity should be justified in an ADR.
 
 ### Design mobile-first
 
-- Use `min-width` for the media and container queries instead of `max-width`
-- Each page or component is tested on a 375px screen large, before tested on desktop.
-- Each clickable / touched should have at least `44x44px`
+- Use `min-width` for media and container queries instead of `max-width`.
+- Test each page or component on a 375px wide screen before testing on desktop.
+- Each clickable / touchable element should be at least `44x44px`.
 
 ### Accessibility
 
-- Use clear color contrast
-- Add a Dark / Light theme
-- Enable / Disable motions and animations
-- Each `img` should have an `alt` attribute
-- The navigation should be doable by using only the Keyboard
+- Respect WCAG AA color contrast (4.5:1 for text).
+- Respect `prefers-color-scheme` and `prefers-reduced-motion`.
+- Each `img` should have an `alt` attribute.
+- The navigation should be doable using only the keyboard.
 
 ### Resilient
 
-- Each api and dependencies call should be wrapped with a try catch, with a clear fallback or error state. It should never fail silently.
+- Each API and dependency call must handle its error explicitly (`try/catch`, or the `error` returned by `useFetch`), with a clear fallback or error state. It should never fail silently.
 
 ### Dependency
 
-- Before adding a dependency, check if it's really needed over the existing stack or a native feature.
+- Before adding a dependency, check if it is really needed over the existing stack or a native feature.
 
 ### Tests
 
