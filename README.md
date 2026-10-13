@@ -2,7 +2,7 @@
 
 ## Goal
 
-Centralize all the content related to a creator using different social media for the communication, the shopping part, the subscriptions / gifts while avoiding fees from each platform.
+Centralize everything a creator publishes on different social media (communication, shop, subscriptions, gifts) in one place, while avoiding the fees of each platform.
 
 ## Features
 
@@ -26,7 +26,7 @@ Centralize all the content related to a creator using different social media for
   - Crowdfunding
   - Donation goal
 - Acknowledgements
-  - Showing donator (from any source)
+  - Showing donors (from any source)
 - Planning
   - Show expected dates for the next publications / lives
 - Publication
@@ -83,3 +83,7 @@ Every feature should be usable by people with disabilities. Accessibility benefi
 ### Resilient
 
 If a module fails, it should not take down the rest of the application. The same applies to the UI: an error should degrade gracefully instead of breaking the whole page.
+
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for the guidelines, the ADR workflow and the labels.
