@@ -62,8 +62,6 @@ The payment provider is defined in [ADR 0004](./0004_payment.md), and the databa
 
 ## Sources
 
-> (New) I think that section could help to understand the decision
-
 - Cloudflare documentation, [Protect your origin server](https://developers.cloudflare.com/fundamentals/security/protect-your-origin-server/)
 - [Cloudflare plans](https://www.cloudflare.com/plans/#application-services)
 - [Open Security Architecture - Patterns](https://opensecurityarchitecture.org/patterns/sp-017/)
