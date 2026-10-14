@@ -1,0 +1,21 @@
+{
+  "name": "creator-hub",
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@10.27.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^4.6.1",
+    "vue": "^3.5.43",
+    "vue-router": "^5.4.0"
+  }
+}

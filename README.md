@@ -62,6 +62,21 @@ All important architecture decisions should be explained in an ADR (Architecture
 - Database: not decided yet — [ADR 0005](./docs/decisions/0005_bdd.md) (Proposed)
 - Payment provider: not decided yet — [ADR 0004](./docs/decisions/0004_payment.md) (Proposed)
 
+## Getting started
+
+Requires Node 22 (`nvm use`) and [pnpm](https://pnpm.io/).
+
+```bash
+pnpm install
+pnpm dev
+```
+
+The app is served on http://localhost:3000.
+
+## Modules
+
+Each module is a Nuxt layer in `layers/<name>/` (lowercase) and exposes a single access point, `api.ts` — [ADR 0001](./docs/decisions/0001_modular_monolith_vs_micro_frontend.md).
+
 ## Principles
 
 ### Secure by Design
