@@ -27,6 +27,7 @@
 
 - When a permission should be defined, use the lowest one that permits the action.
 - Do not commit any secret or any sensitive information.
+- A secret is only set in the server-side `runtimeConfig`, never under `runtimeConfig.public` nor with a `NUXT_PUBLIC_` prefix: those values are sent to the browser.
 
 ### Simple before flexible
 
